@@ -18,10 +18,11 @@ app.use(bodyParser.json());
 
 // Connect to MySQL (ensure the correct environment variables are set)
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,        // Ensure this is correct
-  user: process.env.DB_USER,        // Ensure this is correct
-  password: process.env.DB_PASSWORD,// Ensure this is correct
-  database: process.env.DB_NAME     // Ensure this is correct
+  host: process.env.DB_HOST, // This will be the correct host from Render's environment
+  user: process.env.DB_USER, // Your MySQL username
+  password: process.env.DB_PASSWORD, // Your MySQL password
+  database: process.env.DB_NAME, // Your MySQL database name
+  port: 3306 // 
 });
 
 // Check DB connection
